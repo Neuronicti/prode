@@ -1,7 +1,43 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes)"
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npm install *)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(Get-ChildItem -Path \"c:\\\\dev\\\\prode\\\\src\" -Recurse -Directory)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Get-ChildItem -Path \"c:\\\\dev\\\\prode\\\\src\" -Recurse -Include \"*.tsx\", \"*.ts\")",
+      "Bash(node -e ' *)",
+      "Bash(grep -rn \"emerald\\\\|\\\\]\\\\\\\\$\" c:/dev/prode/src --include=\"*.tsx\" --include=\"*.ts\")",
+      "Bash(grep -n \"\\\\]\\\\$\\\\|text-black\" c:/dev/prode/src/components/wizard/BracketStep.tsx c:/dev/prode/src/components/wizard/SummaryStep.tsx c:/dev/prode/src/components/wizard/WizardProgress.tsx c:/dev/prode/src/app/my-picks/page.tsx)",
+      "Bash(grep -rn \"\\\\]\\\\$\\\\|text-black\" c:/dev/prode/src --include=\"*.tsx\")",
+      "Bash(gh api *)",
+      "Bash(xargs curl -s)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(docker compose *)",
+      "Bash(curl -s http://localhost:4000/health)",
+      "Bash(docker system *)",
+      "Bash(docker volume *)",
+      "Bash(curl -s http://localhost:4000/matches)",
+      "Bash(docker image *)",
+      "Bash(curl -s http://localhost:3000)",
+      "PowerShell(docker buildx du --verbose)",
+      "PowerShell(docker buildx prune -af 2>&1)",
+      "PowerShell(tail -30)",
+      "Bash(curl -s http://localhost:4000/standings)",
+      "Bash(curl -s http://localhost:3000 -w \"\\\\nStatus: %{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:3000 -L)",
+      "Bash(curl -s http://localhost:3000/fixture)",
+      "Bash(curl -s \"http://localhost:3000/fixture\")",
+      "Bash(curl -s -H \"Content-Type: application/json\" http://localhost:4000/matches)",
+      "PowerShell(sleep 5; \\(Invoke-WebRequest -Uri \"http://localhost:3000/fixture\" -ErrorAction SilentlyContinue -TimeoutSec 5\\).Content | Select-String -Pattern \"Grupo|México\" -SimpleMatch | Select-Object -First 1)",
+      "PowerShell(sleep 4; \\(Invoke-WebRequest -Uri \"http://localhost:3000/fixture\" -ErrorAction SilentlyContinue -TimeoutSec 5\\).Content | Select-String -Pattern \"Cargando|Grupo|México\" -SimpleMatch | Select-Object -First 3)",
+      "PowerShell(sleep 5; \\(Invoke-WebRequest -Uri \"http://localhost:3000/fixture\" -ErrorAction SilentlyContinue -TimeoutSec 5\\).Content | Select-String -Pattern \"Grupo|Cargando\" -SimpleMatch | Select-Object -First 1)",
+      "PowerShell(sleep 5; $response = Invoke-WebRequest -Uri \"http://localhost:3000/fixture\" -ErrorAction SilentlyContinue -TimeoutSec 5; $html = $response.Content; if \\($html -match \"Grupo [A-Z]\"\\) { \"SUCCESS: Found Grupo match\"; Write-Host \"Sample:\"; $html | Select-String \"Grupo\" -SimpleMatch | Select-Object -First 1 } else { \"No Grupo found yet\" })",
+      "PowerShell(sleep 4; \\(Invoke-WebRequest -Uri \"http://localhost:3000/fixture\" -ErrorAction SilentlyContinue -TimeoutSec 5\\).Content | Select-String \"Debug:\" -SimpleMatch)",
+      "Bash(curl -s http://localhost:3000/api/test)",
+      "Bash(docker exec *)"
     ]
   }
 }
