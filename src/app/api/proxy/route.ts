@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
   const path = request.nextUrl.searchParams.get('path') || ''
-  const apiUrl = `http://localhost:4000${path}`
+  const apiUrl = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'}${path}`
 
   console.log('[Proxy] GET request to:', apiUrl)
 
@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   const path = request.nextUrl.searchParams.get('path') || ''
-  const apiUrl = `http://localhost:4000${path}`
+  const apiUrl = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'}${path}`
   const body = await request.json()
 
   console.log('[Proxy] POST request to:', apiUrl)
