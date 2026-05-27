@@ -6,9 +6,9 @@ async function request(endpoint: string, options: RequestInit = {}) {
   const url = `${API_URL}?path=${encodeURIComponent(endpoint)}`
   const token = typeof window !== 'undefined' ? localStorage.getItem('auth_token') : null
 
-  const headers: HeadersInit = {
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
-    ...options.headers,
+    ...(options.headers as Record<string, string>),
   }
 
   if (token) {
